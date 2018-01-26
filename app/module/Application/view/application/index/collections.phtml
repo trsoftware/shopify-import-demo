@@ -1,0 +1,4 @@
+<h1>Collections</h1>
+<?php foreach ($this->collections as $collection):?>
+    <a href="/collection/<?php echo $collection->getId()?>"><?php echo $collection->getTitle()?></a><br/>
+<?php endforeach;?>

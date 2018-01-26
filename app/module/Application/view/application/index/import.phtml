@@ -1,0 +1,23 @@
+<h1>Import</h1>
+<input id="clearDB" type="checkbox">&nbsp;Clear DB before import
+<div><button id="import">Import</button></div>
+<div id="status"></div>
+
+<script>
+function afterSuccess(data){
+    $('#status').html('Done.');
+}    
+   
+$(document).ready(function(e) {
+    $('#import').click(function(event){
+        $('#status').html('Please wait...');
+        $.ajax({
+            url: "/import",
+            type: "POST",
+            data: {clearDB : document.getElementById('clearDB').checked},
+            success: afterSuccess
+        });
+    });
+    
+});
+</script>

@@ -1,0 +1,52 @@
+{
+    "name": "api2cart-contest",
+    "description": "Api2Cart Contest Application",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "mvc",
+        "zf"
+    ],
+    "config": {
+        "platform": {
+            "php": "7.0.23"
+        }
+     },    
+    "homepage": "http://framework.zend.com/",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.0",
+        "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
+        "zendframework/zend-mvc": "^3.0.1",
+        "zendframework/zend-json": "*",
+	"doctrine/doctrine-orm-module": "*",
+        "doctrine/doctrine-module": "*",
+        "doctrine/annotations": "*",
+        "doctrine/orm": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/"
+        }
+    },
+    "extra": [],
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "development-disable": "zf-development-mode disable",
+        "development-enable": "zf-development-mode enable",
+        "development-status": "zf-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable"
+        ],
+        "serve": "php -S 0.0.0.0:8080 -t public public/index.php",
+        "test": "phpunit"
+    }
+}
